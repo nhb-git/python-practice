@@ -23,4 +23,4 @@ def alphabet_position(text):
     :param text:
     :return:
     """
-    return ' '.join([str(string.ascii_lowercase.index(s.lower())+1) for s in text if s.lower() in string.ascii_lowercase])
+    return ' '.join(str(string.ascii_lowercase.index(s.lower())+1) for s in text if s.lower() in string.ascii_lowercase)
