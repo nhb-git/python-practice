@@ -23,4 +23,17 @@ def alphabet_position(text):
     :param text:
     :return:
     """
-    return ' '.join(str(string.ascii_lowercase.index(s.lower())+1) for s in text if s.lower() in string.ascii_lowercase)
+    return ' '.join(str(ord(c)-96)for c in text.lower() if c.isalpha())
+    # return ' '.join(str(string.ascii_lowercase.index(s.lower())+1) for s in text if s.lower() in string.ascii_lowercase)
+
+
+def is_isogram(string):
+    """
+    An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+    is_isogram("Dermatoglyphics" ) == true
+    is_isogram("aba" ) == false
+    is_isogram("moOse" ) == false # -- ignore letter case
+    :param string:
+    :return:
+    """
+    return len(string) == len(set(string.lower()))
