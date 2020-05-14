@@ -23,7 +23,7 @@ def alphabet_position(text):
     :param text:
     :return:
     """
-    return ' '.join(str(ord(c)-96)for c in text.lower() if c.isalpha())
+    return ' '.join(str(ord(c) - 96) for c in text.lower() if c.isalpha())
     # return ' '.join(str(string.ascii_lowercase.index(s.lower())+1) for s in text if s.lower() in string.ascii_lowercase)
 
 
@@ -37,3 +37,18 @@ def is_isogram(s):
     :return:
     """
     return len(s) == len(set(s.lower()))
+
+
+def validate_pin(pin):
+    # way1
+    # if pin.isdigit() and (len(pin) == 4 or len(pin) == 6):
+    #     return True
+    # else:
+    #     return False
+
+    # way2
+    # return len(pin) in (4, 6) and pin.isdigit()
+
+    # way3
+    import re
+    return bool(re.match(r'^(\d{4}|\d{6})$', pin))
