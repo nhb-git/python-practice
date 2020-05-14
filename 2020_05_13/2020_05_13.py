@@ -52,3 +52,22 @@ def validate_pin(pin):
     # way3
     import re
     return bool(re.match(r'^(\d{4}|\d{6})$', pin))
+
+
+def longest(s1, s2):
+    """
+    Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible, containing distinct letters,
+
+    each taken only once - coming from s1 or s2.
+    Examples:
+    a = "xyaabbbccccdefww"
+    b = "xxxxyyyyabklmopq"
+    longest(a, b) -> "abcdefklmopqwxy"
+
+    a = "abcdefghijklmnopqrstuvwxyz"
+    longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
+    :param s1:
+    :param s2:
+    :return:
+    """
+    return ''.join(sorted(set(s1+s2)))
