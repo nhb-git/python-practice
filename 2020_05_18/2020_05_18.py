@@ -23,4 +23,6 @@ def comp(array1, array2):
         return False
 
 
-print(comp([1], [2]))
+def order_weight(strng):
+    return ' '.join(sorted(strng.split(), key=lambda weight: (sum(int(c) for c in weight), weight)))
+
