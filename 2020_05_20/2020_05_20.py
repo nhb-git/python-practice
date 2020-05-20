@@ -46,3 +46,58 @@ def rgb(r, g, b):
         else:
             return round(num)
     return ('{:02X}'*3).format(limit(r), limit(g), limit(b))
+
+
+def solution(args):
+    """
+    A format for expressing an ordered list of integers is to use a comma separated list of either
+
+    individual integers
+    or a range of integers denoted by the starting integer separated from the end integer in the range by a dash, '-'. The range includes all integers in the interval including both endpoints. It is not considered a range unless it spans at least 3 numbers. For example ("12, 13, 15-17")
+    Complete the solution so that it takes a list of integers in increasing order and returns a correctly formatted string in the range format.
+    :param args:
+    :return:
+    """
+    # l = list()
+    # l1 = list()
+    # for num in args:
+    #     if not l1:
+    #         l1.append(num)
+    #     else:
+    #         if (num - 1) == l1[-1]:
+    #             l1.append(num)
+    #         else:
+    #             if len(l1) > 2:
+    #                 l.append(str(l1[0]) + '-' + str(l1[-1]))
+    #                 l1 = list()
+    #                 l1.append(num)
+    #             else:
+    #                 l.extend(str(num1) for num1 in l1)
+    #                 l1 = list()
+    #                 l1.append(num)
+    # else:
+    #     if len(l1) > 2:
+    #         l.append(str(l1[0]) + '-' + str(l1[-1]))
+    #     else:
+    #         l.extend(str(num1) for num1 in l1)
+    #
+    # return ','.join(l)
+    ########## way2 ##########
+    out = []
+    beg = end = args[0]
+
+    for n in args[1:] + [""]:
+        if n != end + 1:
+            if end == beg:
+                out.append(str(beg))
+            elif end == beg + 1:
+                out.extend([str(beg), str(end)])
+            else:
+                out.append(str(beg) + "-" + str(end))
+            beg = n
+        end = n
+
+    return ",".join(out)
+
+
+print(solution([-6,-3,-2,-1,0,1,3,4,5,7,8,9,10,11,14,15,17,18,19,20]))
