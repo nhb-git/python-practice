@@ -39,3 +39,9 @@ def first_non_repeating_letter(string):
             return string[index]
     else:
         return ''
+
+
+class radd(int):
+    def __call__(self,n):
+        return radd(self+n)
+
