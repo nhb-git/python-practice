@@ -52,3 +52,9 @@ def removeElement(nums, val):
         if nums[index] == val:
             nums.pop(index)
     return len(nums)
+
+
+class Solution:
+    def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
+        if not root or root == p or root == q:
+            return root
