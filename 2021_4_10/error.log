@@ -1,0 +1,2 @@
+2021-04-10 09:25:41,312 - ERROR - test_logging.py[:37] - error message
+2021-04-10 09:25:41,313 - CRITICAL - test_logging.py[:38] - critical message
