@@ -1,1 +1,15 @@
 venv
+.vscode
+__pycache__
+.Python
+.DS_Store
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dll
+*.exe
+*.whl
+*.egg-info
+*.egg
+*.dist-info
